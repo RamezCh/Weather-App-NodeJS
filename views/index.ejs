@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="searchContainer">
+            <form action="/submitCity" class="searchContainer" method="post">
+                <input type="text" id="cityInput" name="cityName" placeholder="Enter City Name">
+                <button id="searchButton" type="submit" class="searchButton"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <div class="weatherContainer">
+              <h2 class="cityName"> <%= cityName %> </h2>
+              <div class="weatherInfo">
+                <div class="weatherIcon">
+                  <img src="<%= weatherIconUrl %>" alt="Weather Icon" class="rounded-icon">
+                </div>
+                <p class="description"> <%= weatherDescription %> </p>
+                <p class="temperature">Temperature: <%= temp %> &deg;C </p>
+              </div>
+              <div class="details">
+                <div class="humidity">
+                  <i class="fas fa-tint"></i> Humidity: <%= humidity %> %
+                </div>
+                <div class="wind">
+                  <i class="fas fa-wind"></i> Wind Speed: <%= windSpeed %> m/s
+                </div>
+              </div>
+        </div>
+          
+    </div>
+</body>
+</html>
